@@ -29,9 +29,6 @@ spotifyObject = spotipy.Spotify(auth=token)
 # and due to the issue where there is a limit to how many
 # songs can be moved at a time, every time I get a section
 # I immediately upload them
-#
-# it seems like there is a cap to how many can still be uploaded at a time
-# so whenever it stops uploading I just take the limit and add it to the offset
 results = spotifyObject.current_user_saved_tracks(offset=0)
 tracks = results['items']
 while results['next']:
